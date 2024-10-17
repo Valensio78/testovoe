@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Премия1</dataPath>
+			<field>Премия1</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Премия</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сотрудник1</dataPath>
+			<field>Сотрудник1</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сотрудник</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сумма1</dataPath>
+			<field>Сумма1</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	ДокПремииТабПремии.Сотрудник КАК Сотрудник,
+	ДокПремииТабПремии.Премия КАК Премия,
+	ДокПремииТабПремии.Сумма КАК Сумма
+ПОМЕСТИТЬ ВТ1
+ИЗ
+	Документ.ДокПремии.ТабПремии КАК ДокПремииТабПремии
+ГДЕ
+	ДокПремииТабПремии.Ссылка = &amp;Ссылка1
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ДокПремииТабПремии.Сотрудник КАК Сотрудник,
+	ДокПремииТабПремии.Премия КАК Премия,
+	ДокПремииТабПремии.Сумма КАК Сумма
+ПОМЕСТИТЬ ВТ2
+ИЗ
+	Документ.ДокПремии.ТабПремии КАК ДокПремииТабПремии
+ГДЕ
+	ДокПремииТабПремии.Ссылка = &amp;Ссылка2
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ЕСТЬNULL(ВТ2.Сотрудник, ВТ1.Сотрудник) КАК Сотрудник1,
+	ЕСТЬNULL(ВТ2.Премия, ВТ1.Премия) КАК Премия1,
+	ЕСТЬNULL(ВТ2.Сумма, ВТ1.Сумма) КАК Сумма1
+ПОМЕСТИТЬ ВТ_1еУсловие
+ИЗ
+	ВТ2 КАК ВТ2
+		ПОЛНОЕ СОЕДИНЕНИЕ ВТ1 КАК ВТ1
+		ПО ВТ2.Сотрудник = ВТ1.Сотрудник
+			И ВТ2.Премия = ВТ1.Премия
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_1еУсловие.Сотрудник1 КАК Сотрудник1,
+	ВТ_1еУсловие.Премия1 КАК Премия1,
+	ВТ_1еУсловие.Сумма1 КАК Сумма1
+ИЗ
+	ВТ_1еУсловие КАК ВТ_1еУсловие
+ГДЕ
+	ВТ_1еУсловие.Сотрудник1 В (ВЫБРАТЬ РАЗЛИЧНЫЕ
+	ЕСТЬNULL(ВТ1.Сотрудник, ВТ2.Сотрудник) КАК Сотрудник
+ИЗ
+	ВТ1 КАК ВТ1
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ2 КАК ВТ2
+		ПО ВТ1.Сотрудник = ВТ2.Сотрудник
+)</query>
+	</dataSet>
+	<parameter>
+		<name>Ссылка1</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Ссылка1</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:DocumentRef.ДокПремии</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Ссылка2</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Ссылка2</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:DocumentRef.ДокПремии</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Сотрудник1</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Премия1</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Сумма1</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Ссылка1</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>ea4ed8d4-fea4-4744-9e9b-b27a152e656c</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Ссылка2</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>eb5580b1-726e-4d9e-88f1-72d6d43aeb63</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

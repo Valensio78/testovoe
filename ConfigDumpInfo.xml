@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ConfigDumpInfo xmlns="http://v8.1c.ru/8.3/xcf/dumpinfo" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" format="Hierarchical" version="2.18">
+	<ConfigVersions>
+		<Metadata name="Catalog.Type" id="26b81a13-4c24-4f9e-8ade-7021bc6c456f" configVersion="0b10a084f6277d46aa2e47e1cb4dfaaf00000000"/>
+		<Metadata name="Catalog.Премии" id="fe4368dc-7761-460f-a16e-115d1dca568f" configVersion="c8a609f4be2e634482561e4813b7822100000000"/>
+		<Metadata name="Catalog.Сотрудники" id="5bb4be9c-da79-4dab-ad68-4f39337e40d7" configVersion="71251e3073f90449a4c0e0583a97f67200000000"/>
+		<Metadata name="Configuration.Конфигурация" id="e76a570e-4ffb-40e3-b2da-ec4df6861f26" configVersion="bf22fae990797d42b08d614e38453cb900000000"/>
+		<Metadata name="DataProcessor.ОтчетТест2_1" id="fee86776-c47e-4686-9c49-7745b65db4e9" configVersion="9e8c6e4088a20841939090e0be63025300000000"/>
+		<Metadata name="DataProcessor.ОтчетТест2_1.Form.Форма" id="00ccecac-af22-4147-a1ad-c3bbfb8e9d34" configVersion="41493139d4ed074ca55c13c4de64befa00000000"/>
+		<Metadata name="DataProcessor.ОтчетТест2_1.Form.Форма.Form" id="00ccecac-af22-4147-a1ad-c3bbfb8e9d34.0" configVersion="1a9ab1415f0ee840b8f847230ed881bd00000000"/>
+		<Metadata name="Document.ДокПремии" id="981fdbd1-a1e5-45e4-84e9-fbee862ac24e" configVersion="d9e8af8adbeee44c9f4fcaf45721e01600000000">
+			<Metadata name="Document.ДокПремии.TabularSection.ТабПремии.Attribute.Сумма" id="6689f06c-eade-4cba-b0e1-aa6745be4eb7"/>
+			<Metadata name="Document.ДокПремии.TabularSection.ТабПремии.Attribute.Сотрудник" id="8764e9d4-74fc-41ac-ab56-4d01feb3aed3"/>
+			<Metadata name="Document.ДокПремии.TabularSection.ТабПремии" id="c450fb9e-9177-4c2c-ab83-ac33cebd7edf"/>
+			<Metadata name="Document.ДокПремии.TabularSection.ТабПремии.Attribute.Премия" id="d261fc9d-6f9a-43be-862a-aa5da4f92dab"/>
+		</Metadata>
+		<Metadata name="Document.Тестовое2" id="c0532e5e-e687-4592-b11a-66711d6cdad8" configVersion="47474e5cc588e2469ab9c6118bf1542000000000">
+			<Metadata name="Document.Тестовое2.TabularSection.Тестовое2.Attribute.Дата" id="60c50982-b483-4cb0-8ea1-bb95597d6048"/>
+			<Metadata name="Document.Тестовое2.TabularSection.Тестовое2" id="f37ceea5-f3c7-4c07-9b59-0e7d83c40ddb"/>
+			<Metadata name="Document.Тестовое2.TabularSection.Тестовое2.Attribute.Type" id="f43d45ec-ebc2-4138-975a-58f1270bdcb0"/>
+			<Metadata name="Document.Тестовое2.TabularSection.Тестовое2.Attribute.qty" id="f8dd962a-b2ef-4944-bbe2-e35ffe032d6c"/>
+		</Metadata>
+		<Metadata name="Language.Русский" id="69e806d8-0205-4667-a772-182c41ec6327" configVersion="73e9c40b6dc5ae4da43863ab709f88cc00000000"/>
+		<Metadata name="Report.ОтчетТест1" id="a9879cb2-43a0-4c88-90ea-489c790844ff" configVersion="7bd2879bdd2cb542af844d68fd85281000000000"/>
+		<Metadata name="Report.ОтчетТест1.Template.ОсновнаяСхемаКомпоновкиДанных" id="7885e5d8-5673-42d5-bf4b-ddc957446b1e" configVersion="7c3d2ca0c5f25a4a82c1ec4d662218af00000000"/>
+		<Metadata name="Report.ОтчетТест1.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="7885e5d8-5673-42d5-bf4b-ddc957446b1e.0" configVersion="898871fb1f5ed14683b52096b65e869500000000"/>
+		<Metadata name="Subsystem.Тестовое" id="94ba8d4a-604d-4381-8188-5e66a1c428d2" configVersion="e1d1d0dc8d3e1c4d9c859e066c65ae6100000000"/>
+		<Metadata name="Subsystem.Тестовое2" id="2786b01e-b471-4276-90d4-10401892a9e3" configVersion="d8d5af8c3e41464bbf4aaef004a3c95f00000000"/>
+	</ConfigVersions>
+</ConfigDumpInfo>
